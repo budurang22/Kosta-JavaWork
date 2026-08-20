@@ -1,0 +1,16 @@
+### IntelliJ IDEA ###
+out/
+.kotlin
+
+### Eclipse ###
+bin/
+.classpath/
+.project/
+.settings/
+
+### Mac OS ###
+.DS_Store
+
+### Eclipse workspace metadata (별도 워크스페이스 잔재, 프로젝트 코드 아님) ###
+.metadata/
+.claude/

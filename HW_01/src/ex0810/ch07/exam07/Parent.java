@@ -1,0 +1,19 @@
+package ex0810.ch07.exam07;
+
+/* 7. 생성자 호출의 순서
+    Parent(String nation) -> Parent() -> Child(String nation) -> Child()
+* */
+
+public class Parent {
+    public String nation;
+
+    public Parent() {
+        this("대한민국");
+        System.out.println("Parent() call");
+    }
+
+    public Parent(String nation) {
+        this.nation = nation;
+        System.out.println("Parent(String nation) call");
+    }
+}

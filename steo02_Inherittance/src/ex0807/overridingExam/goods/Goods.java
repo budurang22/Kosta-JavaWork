@@ -1,0 +1,72 @@
+package ex0807.overridingExam.goods;
+/**
+  상품으로 속성을 관리하는 개체
+*/
+public class Goods{
+	private String code; //상품코드 null
+	private String name;//상품이름  null
+	private int price;//가격 0 
+	private String explain;//설명 null
+
+    // 기본 생성자를 만들어 놓고 overloading하는 것을 권장한다
+    public Goods() {}
+
+	public Goods(String code, String name, int price, String explain) {
+		this(code, price, explain);
+		this.name = name;
+	}
+
+    public Goods(int price, String explain) {
+        this.price = price;
+		this.explain = explain;
+    }
+
+    public Goods(String code, int price, String explain) {
+        this.code = code;
+        this.price = price;
+        this.explain = explain;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+
+        return code + " : " + name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getExplain() {
+        return explain;
+    }
+
+    public void setExplain(String explain) {
+        this.explain = explain;
+    }
+
+    // 추가 -> 필요한 생성자 / setXxx, getXxx 생성
+
+
+}
