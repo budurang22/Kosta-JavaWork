@@ -1,23 +1,24 @@
 package ex0820;
 
 import javax.swing.*;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
-public class FileCopyExam {
-    public FileCopyExam(String readFileName, String writeFileName) {
-        FileInputStream fis = null;
-        FileOutputStream fos = null;
+public class BufferedFileCopyExam {
+    public BufferedFileCopyExam(String readFileName, String writeFileName) {
+        // FileInputStream fis = null;
+        // FileOutputStream fos = null;
+
+        BufferedInputStream bis = null;
+        BufferedOutputStream bos = null;
 
         try {
-            fis = new FileInputStream(readFileName);
-            fos = new FileOutputStream(writeFileName);
+            bis = new BufferedInputStream(new FileInputStream(readFileName));
+            bos = new BufferedOutputStream(new FileOutputStream(writeFileName));
 
             while(true) {
-                int i = fis.read();
+                int i = bis.read();
                 if (i == -1) break;
-                fos.write(i);
+                bos.write(i);
             }
             System.out.println("복사가 완료 되었습니다.");
 
@@ -25,8 +26,8 @@ public class FileCopyExam {
             e.printStackTrace();
         } finally {
             try {
-                if (fis != null) fis.close();
-                if (fos != null) fos.close();
+                if (bis != null) bis.close();
+                if (bos != null) bos.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -37,6 +38,6 @@ public class FileCopyExam {
         String readFile = JOptionPane.showInputDialog("읽을 파일명은?");
         String writeFile = JOptionPane.showInputDialog("저장할 파일명은?");
 
-        new FileCopyExam(readFile, writeFile);
+        new BufferedFileCopyExam(readFile, writeFile);
     }
 }
