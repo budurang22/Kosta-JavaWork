@@ -9,11 +9,15 @@ public class Profile {
     public void printmenu(){
         try {
             while (true) {
-                System.out.println("-----------------------------------------");
-                System.out.println("1. 프로필 저장\t2. 프로필 불러오기\t3. 종료");
-                System.out.println("-----------------------------------------");
+                System.out.println("다음 사항에 맞게 입력하여 주십시오.");
+                System.out.println("몸무게 입력은 1번");
+                System.out.println("몸무게 검색은 2번");
+                System.out.println("몸무게 변경은 3번");
+                System.out.println("비밀번호 변경은 4번");
+                System.out.println("프로그램 종료는 5번");
+                System.out.println("을 입력 후 Enter 을 눌러 주세요.");
 
-                System.out.print("메뉴 선택 > ");
+                System.out.print("메뉴 선택 : ");
                 int menu = Integer.parseInt(sc.nextLine());
 
                 switch (menu) {
@@ -70,7 +74,7 @@ public class Profile {
     }
 
     public void loadProfile() {
-        System.out.print("이름> ");
+        System.out.print("이름 > ");
         String name = sc.nextLine();
 
         try (FileInputStream fis = new FileInputStream(name + ".txt")) {

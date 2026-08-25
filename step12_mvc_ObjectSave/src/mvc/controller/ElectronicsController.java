@@ -101,7 +101,7 @@ public class ElectronicsController {
     /*
     * 직렬화 시키는 메서드
     * */
-    public void save() {
+    public void saveObject() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("save.txt"))) {
             oos.writeObject(service.selectAll());
         } catch (IOException e) {

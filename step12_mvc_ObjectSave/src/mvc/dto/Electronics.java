@@ -6,7 +6,7 @@ import java.io.Serializable;
  * 전자제품의 속성을 관리하는 객체 
  */
 
-public class Electronics implements Serializable {
+public class Electronics implements Serializable { // 직렬화 대상
     private int modelNo;
     private String modelName;
     private int modelPrice;

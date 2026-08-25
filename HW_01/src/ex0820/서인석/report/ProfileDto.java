@@ -1,9 +1,7 @@
 package ex0820.서인석.report;
 
 public class ProfileDto {
-    String name;
-    int weight;
-    int password;
-
-
+    public String name;
+    public int weight;
+    public int password;
 }
